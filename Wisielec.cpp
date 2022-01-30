@@ -31,18 +31,21 @@ statystyki zczytywanie_statystyk()//zczytanie z pliku aktualnych statystyk
 	fstream plik;
 	int i{};
 	plik.open("statystyki.txt", ios::in);
-	while (!plik.eof())
+	if (plik.is_open())
 	{
-		getline(plik, linia);
-		if (i == 0)
-			statystyka.liczba_gier = stod(linia);
-		else if (i == 1)
-			statystyka.liczba_wygranych = stoi(linia);
-		else if (i == 2)
-			statystyka.liczba_przegranych = stoi(linia);
-		else if (i == 3)
-			statystyka.liczba_bledow = stod(linia);
-		i++;
+		while (!plik.eof())
+		{
+			getline(plik, linia);
+			if (i == 0)
+				statystyka.liczba_gier = stod(linia);
+			else if (i == 1)
+				statystyka.liczba_wygranych = stoi(linia);
+			else if (i == 2)
+				statystyka.liczba_przegranych = stoi(linia);
+			else if (i == 3)
+				statystyka.liczba_bledow = stod(linia);
+			i++;
+		}
 	}
 	plik.close();
 	return statystyka;
@@ -228,10 +231,13 @@ void zgadywanie(string wylosowany_wyraz, int n)
 	}
 	ofstream plik;
 	plik.open("statystyki.txt");
-	plik << statystyka.liczba_gier << endl;
-	plik << statystyka.liczba_wygranych << endl;
-	plik << statystyka.liczba_przegranych << endl;
-	plik << statystyka.liczba_bledow << endl;
+	if (plik.is_open())
+	{
+		plik << statystyka.liczba_gier << endl;
+		plik << statystyka.liczba_wygranych << endl;
+		plik << statystyka.liczba_przegranych << endl;
+		plik << statystyka.liczba_bledow << endl;
+	}
 	plik.close();
 
 }
