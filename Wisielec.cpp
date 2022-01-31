@@ -134,7 +134,7 @@ void zgadywanie(string wylosowany_wyraz, int n)
 			else if (czy_pisac_spacje)
 			{
 				cout << " _ ";
-				Sleep(250);
+				Sleep(100);
 				ile_pustych++;//sprawdzenie czy byly bledy
 			}
 			i_glowne++;
@@ -355,7 +355,7 @@ void gra()
 				{
 					system("cls");
 					cout << "POWODZENIA";
-					Sleep(3000);
+					Sleep(1500);
 					system("cls");
 					zgadywanie(losowanie_wyrazu(), 5);
 					cout << "chcesz grac dalej?(TAK-1,NIE-0) \n";
