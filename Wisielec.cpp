@@ -108,7 +108,6 @@ void zgadywanie(string wylosowany_wyraz, int n)
 			}
 		}
 
-		/*sprawdzenie_inputu(i, podana_litera, podane_litery, j);*///wywolanie funkcji ktora sprawdza input uzytkownika
 		podane_litery[i] = podana_litera[0];//gdy funkcja sie skonczy i podana litera jest prawidlowa dodaje ja do tabeli ktora bedzie zawierac wszystkie podane litery
 		system("cls");
 		cout << "-----------------------------------\n";
